@@ -9,5 +9,7 @@ target 'DevelHelper' do
   pod 'SnapKit'
   pod 'Alamofire'
   pod 'RealmSwift'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
 end

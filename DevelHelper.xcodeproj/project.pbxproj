@@ -20,12 +20,15 @@
 		66E06CB3298D1A160060DEFF /* HumanInterfaceGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CB2298D1A160060DEFF /* HumanInterfaceGuideViewController.swift */; };
 		66E06CB5298D1B060060DEFF /* ExaminationGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CB4298D1B060060DEFF /* ExaminationGuideViewController.swift */; };
 		66E06CB7298D1D360060DEFF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CB6298D1D360060DEFF /* HomeViewController.swift */; };
-		66E06CBA298D1DEF0060DEFF /* TranslateViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CB9298D1DEF0060DEFF /* TranslateViewContoller.swift */; };
+		66E06CBA298D1DEF0060DEFF /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CB9298D1DEF0060DEFF /* TranslateViewController.swift */; };
 		66E06CC0298D24AC0060DEFF /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CBF298D24AC0060DEFF /* Language.swift */; };
 		66E06CC3298D24D20060DEFF /* TranslateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CC2298D24D20060DEFF /* TranslateRequestModel.swift */; };
 		66E06CC5298D24F40060DEFF /* TranslateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CC4298D24F40060DEFF /* TranslateResponseModel.swift */; };
 		66E06CC7298D252F0060DEFF /* SnapKit+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CC6298D252F0060DEFF /* SnapKit+.swift */; };
 		66E06CC9298D254F0060DEFF /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CC8298D254F0060DEFF /* APIKeys.swift */; };
+		66E06CCB298D2FDE0060DEFF /* LanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CCA298D2FDE0060DEFF /* LanguageButtonView.swift */; };
+		66E06CCE298D328D0060DEFF /* SourceTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CCD298D328D0060DEFF /* SourceTextView.swift */; };
+		66E06CD0298D33390060DEFF /* ResultTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CCF298D33390060DEFF /* ResultTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,12 +50,15 @@
 		66E06CB2298D1A160060DEFF /* HumanInterfaceGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanInterfaceGuideViewController.swift; sourceTree = "<group>"; };
 		66E06CB4298D1B060060DEFF /* ExaminationGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExaminationGuideViewController.swift; sourceTree = "<group>"; };
 		66E06CB6298D1D360060DEFF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		66E06CB9298D1DEF0060DEFF /* TranslateViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewContoller.swift; sourceTree = "<group>"; };
+		66E06CB9298D1DEF0060DEFF /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		66E06CBF298D24AC0060DEFF /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		66E06CC2298D24D20060DEFF /* TranslateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateRequestModel.swift; sourceTree = "<group>"; };
 		66E06CC4298D24F40060DEFF /* TranslateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResponseModel.swift; sourceTree = "<group>"; };
 		66E06CC6298D252F0060DEFF /* SnapKit+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SnapKit+.swift"; sourceTree = "<group>"; };
 		66E06CC8298D254F0060DEFF /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		66E06CCA298D2FDE0060DEFF /* LanguageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageButtonView.swift; sourceTree = "<group>"; };
+		66E06CCD298D328D0060DEFF /* SourceTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextView.swift; sourceTree = "<group>"; };
+		66E06CCF298D33390060DEFF /* ResultTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTextView.swift; sourceTree = "<group>"; };
 		77359693AE42A42619DF59F6 /* Pods-DevelHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevelHelper.debug.xcconfig"; path = "Target Support Files/Pods-DevelHelper/Pods-DevelHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		DD28E88CA52898171329E684 /* Pods-DevelHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevelHelper.release.xcconfig"; path = "Target Support Files/Pods-DevelHelper/Pods-DevelHelper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,7 +151,8 @@
 		66E06CBB298D239F0060DEFF /* TranslateTab */ = {
 			isa = PBXGroup;
 			children = (
-				66E06CB9298D1DEF0060DEFF /* TranslateViewContoller.swift */,
+				66E06CB9298D1DEF0060DEFF /* TranslateViewController.swift */,
+				66E06CCC298D2FE10060DEFF /* SubViews */,
 				66E06CC1298D24AF0060DEFF /* Models */,
 			);
 			path = TranslateTab;
@@ -183,6 +190,16 @@
 				66E06CC4298D24F40060DEFF /* TranslateResponseModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		66E06CCC298D2FE10060DEFF /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				66E06CCA298D2FDE0060DEFF /* LanguageButtonView.swift */,
+				66E06CCF298D33390060DEFF /* ResultTextView.swift */,
+				66E06CCD298D328D0060DEFF /* SourceTextView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		671B7632A1DA40184B9854E0 /* Frameworks */ = {
@@ -319,17 +336,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66E06CCE298D328D0060DEFF /* SourceTextView.swift in Sources */,
 				66E06C87298D169E0060DEFF /* AppDelegate.swift in Sources */,
 				66E06CC7298D252F0060DEFF /* SnapKit+.swift in Sources */,
 				66E06CC9298D254F0060DEFF /* APIKeys.swift in Sources */,
 				66E06CC0298D24AC0060DEFF /* Language.swift in Sources */,
 				66E06CB5298D1B060060DEFF /* ExaminationGuideViewController.swift in Sources */,
-				66E06CBA298D1DEF0060DEFF /* TranslateViewContoller.swift in Sources */,
+				66E06CCB298D2FDE0060DEFF /* LanguageButtonView.swift in Sources */,
+				66E06CBA298D1DEF0060DEFF /* TranslateViewController.swift in Sources */,
 				66E06CB3298D1A160060DEFF /* HumanInterfaceGuideViewController.swift in Sources */,
 				66E06CB7298D1D360060DEFF /* HomeViewController.swift in Sources */,
 				66E06CAE298D19530060DEFF /* UIColor+.swift in Sources */,
 				66E06CB1298D19790060DEFF /* String+.swift in Sources */,
 				66E06C9E298D17590060DEFF /* MainTabBarController.swift in Sources */,
+				66E06CD0298D33390060DEFF /* ResultTextView.swift in Sources */,
 				66E06CC5298D24F40060DEFF /* TranslateResponseModel.swift in Sources */,
 				66E06CC3298D24D20060DEFF /* TranslateRequestModel.swift in Sources */,
 				66E06C89298D169E0060DEFF /* SceneDelegate.swift in Sources */,

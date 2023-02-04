@@ -37,7 +37,7 @@ private extension MainTabBarController {
             selectedImage: UIImage(systemName: "doc.plaintext.fill")
         )
         
-        let translateTab = UINavigationController(rootViewController: TranslateViewContoller())
+        let translateTab = UINavigationController(rootViewController: TranslateViewController())
         translateTab.tabBarItem = UITabBarItem(
             title: "Translate".localized(),
             image: UIImage(systemName: "a.circle"),
