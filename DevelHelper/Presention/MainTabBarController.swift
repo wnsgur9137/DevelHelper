@@ -14,6 +14,7 @@ final class MainTabBarController: UITabBarController {
     }
 }
 
+// MARK: Configure Tab
 private extension MainTabBarController {
     func setupTabBar() {
         let homeTab = UINavigationController(rootViewController: HomeViewController())

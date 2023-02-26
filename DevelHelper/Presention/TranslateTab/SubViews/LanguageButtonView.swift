@@ -6,43 +6,42 @@
 //
 
 import UIKit
-import SnapKit
-import RxSwift
-import RxCocoa
 
 final class LanguageButtonView: UIView {
     
-    let disposeBag = DisposeBag()
-    
-    private lazy var sourceLanguageButton: UIButton = {
+    let sourceLanguageButton: UIButton = {
         let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Korean".localized(), for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .bold)
         button.setTitleColor(.label, for: .normal)
         return button
     }()
     
-    private lazy var targetLanguageButton: UIButton = {
+    let targetLanguageButton: UIButton = {
         let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("English".localized(), for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .bold)
         button.setTitleColor(.label, for: .normal)
         return button
     }()
     
-    private lazy var changeLanguageButton: UIButton = {
+    let changeLanguageButton: UIButton = {
         let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "arrow.left.arrow.right"), for: .normal)
         button.tintColor = .label
         return button
     }()
     
-    lazy var buttonStackView: UIStackView = {
+    private lazy var buttonStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             self.sourceLanguageButton,
             self.changeLanguageButton,
             self.targetLanguageButton
         ])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         return stackView
@@ -50,8 +49,9 @@ final class LanguageButtonView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupLayout()
-        bind()
+        self.configureView()
+        self.addSubviews()
+        self.setConstraints()
     }
 
     required init?(coder: NSCoder) {
@@ -59,29 +59,27 @@ final class LanguageButtonView: UIView {
     }
 }
 
-private extension LanguageButtonView {
-    func bind() {
-        changeLanguageButton.rx.tap
-            .bind {
-                print("changeLanguageButton is tapped")
-            }
-            .disposed(by: disposeBag)
+// MARK: Configure
+extension LanguageButtonView {
+    private func configureView() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }
+}
+
+// MARK: Configure Layout
+extension LanguageButtonView {
+    private func addSubviews() {
+        self.addSubview(buttonStackView)
     }
     
-    func setupLayout() {
-        [
-            buttonStackView
-        ].forEach { addSubview($0) }
-        
-        buttonStackView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-
-//        buttonStackView.snp.makeConstraints {
-//            $0.top.equalToSuperview().offset(defaultSpacing)
-//            $0.leading.equalToSuperview().offset(defaultSpacing)
-//            $0.trailing.equalToSuperview().offset(-defaultSpacing)
-//            $0.centerX.equalToSuperview()
-//        }
+    private func setConstraints() {
+        NSLayoutConstraint.activate([
+            buttonStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            buttonStackView.topAnchor.constraint(equalTo: self.topAnchor),
+            buttonStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            buttonStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            buttonStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            buttonStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+        ])
     }
 }

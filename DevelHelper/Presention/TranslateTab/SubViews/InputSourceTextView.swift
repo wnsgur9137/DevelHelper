@@ -1,17 +1,21 @@
 //
-//  SourceTextView.swift
+//  InputSourceTextView.swift
 //  DevelHelper
 //
-//  Created by 이준혁 on 2023/02/03.
+//  Created by 이준혁 on 2023/02/05.
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-final class SourceTextView: UIView {
-    let sourceTextView: UITextView = {
+final class InputSourceTextView: UIView {
+    let disposeBag = DisposeBag()
+    
+    private lazy var inputSourceTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.font = .systemFont(ofSize: 20.0)
+        textView.font = .systemFont(ofSize: 18.0)
         textView.textColor = .label
         textView.textAlignment = .left
         let insetValue = 18.0
@@ -37,25 +41,25 @@ final class SourceTextView: UIView {
 }
 
 // MARK: Configure
-extension SourceTextView {
+extension InputSourceTextView {
     private func configureView() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = 5.0
-        self.layer.borderColor = UIColor.lightGray.cgColor
-        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.blue.cgColor
+        self.layer.borderWidth = 2.0
     }
 }
 
 // MARK: Configure Layout
-extension SourceTextView {
+private extension InputSourceTextView {
     private func addSubviews() {
-        addSubview(sourceTextView)
+        self.addSubview(inputSourceTextView)
     }
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            sourceTextView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            sourceTextView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            inputSourceTextView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            inputSourceTextView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
         ])
     }
 }

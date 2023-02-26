@@ -29,6 +29,7 @@
 		66E06CCB298D2FDE0060DEFF /* LanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CCA298D2FDE0060DEFF /* LanguageButtonView.swift */; };
 		66E06CCE298D328D0060DEFF /* SourceTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CCD298D328D0060DEFF /* SourceTextView.swift */; };
 		66E06CD0298D33390060DEFF /* ResultTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CCF298D33390060DEFF /* ResultTextView.swift */; };
+		66E06CD2298FA0F10060DEFF /* InputSourceTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06CD1298FA0F10060DEFF /* InputSourceTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		66E06CCA298D2FDE0060DEFF /* LanguageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageButtonView.swift; sourceTree = "<group>"; };
 		66E06CCD298D328D0060DEFF /* SourceTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextView.swift; sourceTree = "<group>"; };
 		66E06CCF298D33390060DEFF /* ResultTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTextView.swift; sourceTree = "<group>"; };
+		66E06CD1298FA0F10060DEFF /* InputSourceTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSourceTextView.swift; sourceTree = "<group>"; };
 		77359693AE42A42619DF59F6 /* Pods-DevelHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevelHelper.debug.xcconfig"; path = "Target Support Files/Pods-DevelHelper/Pods-DevelHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		DD28E88CA52898171329E684 /* Pods-DevelHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevelHelper.release.xcconfig"; path = "Target Support Files/Pods-DevelHelper/Pods-DevelHelper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +200,7 @@
 				66E06CCA298D2FDE0060DEFF /* LanguageButtonView.swift */,
 				66E06CCF298D33390060DEFF /* ResultTextView.swift */,
 				66E06CCD298D328D0060DEFF /* SourceTextView.swift */,
+				66E06CD1298FA0F10060DEFF /* InputSourceTextView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				66E06CC5298D24F40060DEFF /* TranslateResponseModel.swift in Sources */,
 				66E06CC3298D24D20060DEFF /* TranslateRequestModel.swift in Sources */,
 				66E06C89298D169E0060DEFF /* SceneDelegate.swift in Sources */,
+				66E06CD2298FA0F10060DEFF /* InputSourceTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

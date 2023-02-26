@@ -6,31 +6,37 @@
 //
 
 import UIKit
-import SnapKit
-import RxSwift
-import RxCocoa
 
 final class ResultTextView: UIView {
     
-    private lazy var resultLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 18.0, weight: .bold)
-        label.textColor = .tintColor
-        label.numberOfLines = 0
-        label.text = "Hello"
-        label.backgroundColor = .gray
-        return label
+    private let resultTextView: UITextView = {
+        let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.font = .systemFont(ofSize: 18.0, weight: .bold)
+        textView.textColor = .tintColor
+        textView.textContainerInset = UIEdgeInsets(
+            top: 18.0,
+            left: 18.0,
+            bottom: 18.0,
+            right: 18.0
+        )
+        textView.text = "HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello"
+        textView.backgroundColor = .gray
+        textView.isEditable = false
+        return textView
     }()
     
-    private lazy var bookmarkButton: UIButton = {
+    let bookmarkButton: UIButton = {
         let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "star"), for: .normal)
         button.tintColor = UIColor.yellow
         return button
     }()
     
-    private lazy var copyButton: UIButton = {
+    let copyButton: UIButton = {
         let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
         button.tintColor = .label
         return button
@@ -39,19 +45,24 @@ final class ResultTextView: UIView {
     private lazy var buttonStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             bookmarkButton,
-            copyButton
+            copyButton,
+            UIView()
         ])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 10.0
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
+        stackView.layer.cornerRadius = 5.0
+        stackView.layer.borderColor = UIColor.red.cgColor
         return stackView
     }()
     
     private lazy var resultStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
-            resultLabel,
+            resultTextView,
             buttonStackView
         ])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 10.0
         stackView.distribution = .equalSpacing
@@ -60,11 +71,9 @@ final class ResultTextView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.layer.cornerRadius = 5.0
-        self.layer.borderWidth = 10.0
-        self.layer.borderColor = UIColor.blue.cgColor
-        setupLayout()
-        bind()
+        self.addSubviews()
+        self.setConstraints()
+        self.configureView()
     }
     
     required init?(coder: NSCoder) {
@@ -72,30 +81,30 @@ final class ResultTextView: UIView {
     }
 }
 
-private extension ResultTextView {
-    func bind() {
-        copyButton.rx.tap
-            .bind {
-                print("copyButton is tapped")
-            }
-            .dispose()
+// MARK: Configure
+extension ResultTextView {
+    private func configureView() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.layer.cornerRadius = 5.0
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.lightGray.cgColor
+    }
+}
+
+// MARK: Configure Layout
+extension ResultTextView {
+    private func addSubviews() {
+        addSubview(resultStackView)
     }
     
-    func setupLayout() {
-        [
-            resultLabel,
-            buttonStackView
-        ].forEach { addSubview($0) }
+    private func setConstraints() {
+        NSLayoutConstraint.activate([
+            resultTextView.heightAnchor.constraint(equalToConstant: 250.0),
+        ])
         
-        resultLabel.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview()
-        }
-        
-        buttonStackView.snp.makeConstraints {
-            $0.top.equalTo(resultLabel.snp.bottom).offset(5.0)
-            $0.leading.equalTo(resultLabel.snp.leading).offset(5.0)
-        }
+        NSLayoutConstraint.activate([
+            resultStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            resultStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+        ])
     }
 }

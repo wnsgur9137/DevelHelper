@@ -6,7 +6,7 @@ target 'DevelHelper' do
   use_frameworks!
 
   # Pods for DevelHelper
-  pod 'SnapKit'
+#pod 'SnapKit'
   pod 'Alamofire'
   pod 'RealmSwift'
   pod 'RxSwift'
